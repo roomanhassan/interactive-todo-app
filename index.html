@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="app-wrapper">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <span class="logo-icon">✅</span>
+        <h1 class="app-title">My To-Do</h1>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <span class="toggle-icon" id="toggleIcon">🌙</span>
+        <span class="toggle-label" id="toggleLabel">Dark Mode</span>
+      </button>
+    </header>
+
+    <!-- Main Card -->
+    <main class="main-card">
+      
+      <!-- Input Area -->
+      <div class="input-section">
+        <div class="input-row">
+          <input
+          
+            type="text"
+            id="taskInput"
+            class="task-input"
+            placeholder="Add a new task..."
+            maxlength="120"
+            autocomplete="off"
+          />
+          <button class="add-btn" id="addBtn" aria-label="Add task">
+            <span class="plus-icon">+</span>
+            <span>Add</span>
+          </button>
+        </div>
+        <div class="input-meta">
+          <span class="char-count" id="charCount">0 / 120</span>
+        </div>
+      </div>
+
+      <!-- Filters & Stats -->
+      <div class="toolbar">
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="active">Active</button>
+          <button class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+        <span class="task-stats" id="taskStats">0 tasks</span>
+      </div>
+
+      <!-- Task List -->
+      <ul class="task-list" id="taskList">
+        <!-- Tasks injected by JS -->
+      </ul>
+
+      <!-- Empty State -->
+      <div class="empty-state" id="emptyState">
+        <div class="empty-icon">📋</div>
+        <p class="empty-title">No tasks yet</p>
+        <p class="empty-sub">Add your first task above to get started!</p>
+      </div>
+
+      <!-- Footer Actions -->
+      <div class="card-footer" id="cardFooter">
+        <span class="pending-count" id="pendingCount">0 left</span>
+        <button class="clear-btn" id="clearCompleted">Clear Completed</button>
+      </div>
+
+    </main>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
